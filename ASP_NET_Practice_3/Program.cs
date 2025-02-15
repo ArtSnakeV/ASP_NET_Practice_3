@@ -9,11 +9,8 @@ builder.Services.AddTransient<INumberService, FactorialService>();
 
 var app = builder.Build();
 
-//app.MapGet("/", () => "Hello World!");
-
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
 
 
 //IServiceCollection services;
@@ -32,6 +29,7 @@ app.Run(async context=>
     // Sending our `message` to the User if not found any proper page
     await context.Response.WriteAsync(message);
 });
+
 
 
 
