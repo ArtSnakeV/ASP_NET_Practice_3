@@ -22,7 +22,7 @@ namespace ASP_NET_Practice_3.Middleware
                 // Let's try to get value of our number ("index")
                 if (int.TryParse(context.Request.Query["index"], out int indexValue))
                 {
-                    // Find out which radio button is choosen
+                    // Find out which radio button is choosen 
                     if (int.TryParse(context.Request.Query["rad_button"], out int radButton))
                     {
                         // Creating our abstract service for the result
