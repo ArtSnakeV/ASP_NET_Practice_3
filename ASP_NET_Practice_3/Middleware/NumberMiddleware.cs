@@ -6,12 +6,12 @@ namespace ASP_NET_Practice_3.Middleware
     public class NumberMiddleware
     {
         private RequestDelegate next;
-        private INumberService numberService;
+        //private INumberService numberService;
 
         // Dependency Injection
-        public NumberMiddleware(RequestDelegate next, INumberService numberService) {
+        public NumberMiddleware(RequestDelegate next) { //}, INumberService numberService) {
             this.next = next;
-            this.numberService = numberService;
+            //this.numberService = numberService;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -43,14 +43,16 @@ namespace ASP_NET_Practice_3.Middleware
                         // Depending of choosen `radio button` calculating corresponding number
                         if (radButton == 0) // User wants `Fibonacci` calculation
                         {
-                            resService = new FibonacciService();
+                            //resService = new FibonacciService();
+                            resService = context.RequestServices.GetRequiredService<FibonacciService>();
                             result += "<h1>Fibonacci number</h1>  <div>Your Fibonacci number is </div> <div>";
                             result += resService.GetNumberResult(indexValue).ToString();
                             result += "</div>";
                         }
                         else // Factorial calculation
                         {
-                            resService = new FactorialService();
+                            //resService = new FactorialService();
+                            resService = context.RequestServices.GetRequiredService<FactorialService>();
                             result += "<h1>Factorial number</h1>  <div>Your factorial number is </div> <div>";
                             result += resService.GetNumberResult(indexValue).ToString();
                             result += "</div>";

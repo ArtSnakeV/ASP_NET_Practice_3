@@ -49,13 +49,14 @@ table{
 }
 
 .mresult {
-    font-size: 48px; /* Adjust the size as needed */
+    font-size: 32px; /* Adjust the size as needed */
     color: #2E8B57; /* Dark green color */
     font-family: sans-serif, 'Arial'; /* You can change the font family */
     text-align: center; /* Center the text */
+    margin: 10px;
     padding: 20px; /* Add some padding */
     border: 2px solid #2E8B57; /* Optional: border to enhance the view */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
     background-color: rgba(46, 139, 87, 0.1); /* Light background for contrast */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     transition: transform 0.3s; /* Animation for hover effect */

@@ -5,8 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddTransient<INumberService, FactorialService>();
-
+//builder.Services.AddTransient<INumberService, FactorialService>();
+builder.Services.AddTransient<FactorialService>();
+builder.Services.AddTransient<FibonacciService>();
 var app = builder.Build();
 
 app.UseDefaultFiles();
@@ -24,7 +25,7 @@ app.Run(async context=>
 {
     string message = "Not found!";
     // Using Service Locator
-    context.RequestServices.GetRequiredService<INumberService>();
+    //context.RequestServices.GetRequiredService<INumberService>();
     context.Response.ContentType = "text/html;charset=utf-8";
     // Sending our `message` to the User if not found any proper page
     await context.Response.WriteAsync(message);

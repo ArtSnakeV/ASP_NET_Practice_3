@@ -8,9 +8,9 @@ namespace ASP_NET_Practice_3.Services.Implementations
         public string GetNumberResult(int number)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("<label class=\"mresult\">");
+            sb.Append("<div class=\"mresult\">");
             sb.Append($"{CheckFNumber(number)}");
-            sb.Append("</label>");
+            sb.Append("</div>");
             return sb.ToString();
         }
 
